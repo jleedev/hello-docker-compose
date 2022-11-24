@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:19-alpine
 RUN corepack enable \
 	&& corepack prepare --activate yarn@stable
 
