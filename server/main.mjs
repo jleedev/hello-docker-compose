@@ -20,6 +20,10 @@ const router = new Router();
 app.use(logger());
 app.use(bodyParser());
 
+router.get("/health", async function(ctx, next) {
+  ctx.body = await redis.ping();
+});
+
 router.get("/notes", async function(ctx, next) {
   const result = [];
   for await (const id of redis.sScanIterator("notes")) {

@@ -1,2 +1,2 @@
-docker compose up -d redis server
 docker compose run client
+docker compose down
